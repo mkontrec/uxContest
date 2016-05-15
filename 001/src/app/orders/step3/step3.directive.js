@@ -1,4 +1,4 @@
-angular.module('app').directive('uxStep3', function(){
+angular.module('app').directive('uxStep3', function () {
 
     return {
         restrict: 'E',

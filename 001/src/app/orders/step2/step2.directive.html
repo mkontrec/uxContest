@@ -1,41 +1,52 @@
 <div class="row p-a-1">
     <div class="col-xs-6 ">
 
-        <div class="text-xs-center">
+        <input name="quantity" ng-change="step2Ctrl.onQuantityChange()"
+               id="quantity" type="number" ng-model="step2Ctrl.quantity
+                   " class="form-control form-control__quantity">
 
-            <input name="quantity" ng-change="step2Ctrl.onQuantityChange()" id="quantity" type="number" ng-model="step2Ctrl.quantity" class="form-control">
 
-            <div class="input-group">
-            <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" ng-click="step2Ctrl.sub(100)">-100</button>
-          </span>
-            <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" ng-click="step2Ctrl.sub(10)">-10</button>
-          </span>
-          <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" ng-click="step2Ctrl.sub(1)">-1</button>
-          </span>
+        <div class="row m-t-1">
+            <div class="col-xs-6">
+                <div class="input-group">
+                        <span class="input-group-btn">
+                        <button class="btn btn-warning-outline" type="button" ng-click="step2Ctrl.sub(10)">-10</button>
+                      </span>
+                      <span class="input-group-btn">
+                        <button class="btn btn-warning-outline" type="button" ng-click="step2Ctrl.sub(1)">-1</button>
+                      </span>
+                </div>
             </div>
 
-            <div class="input-group">
-
-            <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" ng-click="step2Ctrl.add(1)">+1</button>
-          </span>
-            <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" ng-click="step2Ctrl.add(10)">+10</button>
-          </span>
-            <span class="input-group-btn">
-            <button class="btn btn-secondary" type="button" ng-click="step2Ctrl.add(100)">+100</button>
-          </span>
+            <div class="col-xs-6">
+                <div class="input-group pull-xs-right">
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary-outline" type="button" ng-click="step2Ctrl.add(1)">+1</button>
+                      </span>
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary-outline" type="button" ng-click="step2Ctrl.add(10)">+10</button>
+                      </span>
+                </div>
             </div>
         </div>
-
     </div>
 
     <div class="col-xs-6">
 
         <ux-order-summary></ux-order-summary>
 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12  m-t-2">
+
+        <div class="pull-xs-right">
+
+            <button class="btn btn-success pull-xs-right" ng-click="orderNavigationCtrl.openStep(3)" href="#">Confirm
+                quantity
+            </button>
+            <div class="clearfix"></div>
+        </div>
     </div>
 </div>

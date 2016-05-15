@@ -1,5 +1,27 @@
 @import "bower_components/bootstrap/scss/bootstrap-flex";
 
-.cup:hover,.cup:active,.cup:active{
+.cup:hover, .cup:active, .cup:active {
   cursor: pointer;
+}
+
+.form-control__quantity {
+  margin: 0 auto;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.spin
+{
+  animation:spin 1.0s linear infinite;
+}
+
+.text-strikethrough
+{
+  text-decoration: line-through;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -4,23 +4,37 @@
 
     <table class="table table-sm">
         <tr>
-            <td>Selected cup:</td>
-            <td>{{ orderSummaryCtrl.data.selectedCup.name }} </td>
+            <td class="text-muted">Selected cup:</td>
+            <td class="font-weight-bold">{{ orderSummaryCtrl.data.selectedCup.name }}</td>
         </tr>
         <tr>
-            <td>Price:</td>
-            <td>{{ orderSummaryCtrl.data.selectedCup.price | currency: '€': 2 }} </td>
+            <td class="text-muted">Price:</td>
+            <td class="font-weight-bold">{{ orderSummaryCtrl.data.selectedCup.price | currency: '€': 2 }}</td>
         </tr>
         <tr>
-            <td>Quantity: </td>
-            <td>{{ orderSummaryCtrl.data.quantity }} </td>
+            <td class="text-muted">Quantity:</td>
+            <td class="font-weight-bold">{{ orderSummaryCtrl.data.quantity }}</td>
         </tr>
 
     </table>
 
-    <p class="text-muted">Price: {{ orderSummaryCtrl.data.selectedCup.price * orderSummaryCtrl.data.quantity | currency: '€': 2}}</p>
 
+    <div class="m-t-2 pull-xs-right text-xs-right">
+        <p><span class="text-muted">Price: </span> <span class="font-weight-bold"
+                                                         ng-class="{'text-strikethrough': orderSummaryCtrl.data.discountCode}"
 
+                                                         style="{{ (!orderSummaryCtrl.data.discountCode) ? 'font-size: 150%' : ''}}">{{
+           orderSummaryCtrl.data.selectedCup.price *
+           orderSummaryCtrl.data.quantity | currency: '€': 2}}</span></p>
 
+        <p ng-if="orderSummaryCtrl.data.discountCode" class="text-success">Discount: -10%</p>
+
+        <p ng-if="orderSummaryCtrl.data.discountCode"><span class="text-muted m-t-2">Final price: </span> <span class="font-weight-bold"
+                                                         style="font-size: 150%">{{
+            (orderSummaryCtrl.data.selectedCup.price *
+           orderSummaryCtrl.data.quantity) * 0.9 | currency: '€': 2}}</span></p>
+    </div>
+
+    <div class="clearfix"></div>
 </div>
 

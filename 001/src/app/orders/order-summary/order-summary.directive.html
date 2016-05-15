@@ -1,0 +1,26 @@
+<div class="card p-a-1">
+
+    <p class="text-muted small">Order summary</p>
+
+    <table class="table table-sm">
+        <tr>
+            <td>Selected cup:</td>
+            <td>{{ orderSummaryCtrl.data.selectedCup.name }} </td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td>{{ orderSummaryCtrl.data.selectedCup.price | currency: '€': 2 }} </td>
+        </tr>
+        <tr>
+            <td>Quantity: </td>
+            <td>{{ orderSummaryCtrl.data.quantity }} </td>
+        </tr>
+
+    </table>
+
+    <p class="text-muted">Price: {{ orderSummaryCtrl.data.selectedCup.price * orderSummaryCtrl.data.quantity | currency: '€': 2}}</p>
+
+
+
+</div>
+

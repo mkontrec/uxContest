@@ -70,10 +70,12 @@ gulp.task('serve', function(){
 gulp.task('watch', ['serve'], function(){
 
 	//	Run tasks on start
-	gulp.start(['scripts', 'move', 'buildVendorJS']);
+	gulp.start(['scripts', 'move', 'sass', 'buildVendorJS']);
 
 	gulp.watch(['./src/**/*.js'], ['scripts']);
 	gulp.watch(['./src/**/*.html'], ['move']);
+	gulp.watch(['./src/assets/**/*.scss'], ['sass']);
+
 	gulp.watch(['./dependencies.json'], ['buildVendorJS']);
 
 });
